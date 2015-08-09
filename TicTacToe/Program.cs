@@ -27,19 +27,11 @@ namespace TicTacToe
         private static char[][] initWorld()
         {
             char[][] world = new char[3][];
-            world[0] = new char[3];
-            world[1] = new char[3];
-            world[2] = new char[3];
+            world[0] = new char[] { ' ', ' ', ' ' };
+            world[1] = new char[] { ' ', 'O', ' ' };
+            world[2] = new char[] { ' ', ' ', ' ' };
 
-            world[0][0] = ' ';
-            world[0][1] = ' ';
-            world[0][2] = ' ';
-            world[1][0] = ' ';
-            world[1][1] = 'O';
-            world[1][2] = ' ';
-            world[1][0] = ' ';
-            world[1][1] = ' ';
-            world[1][2] = ' ';
+           
 
             return world;
         }
@@ -59,9 +51,10 @@ namespace TicTacToe
 
         private static void drawWorld(char[][] world)
         {
-            string strWorld = " 0 1 2\n";
-            strWorld += "A";
-            //fill in code
+            var strBuilder = new StringBuilder();
+            strBuilder.Append(" 0 1 2\nA");
+ 
+            string strWorld = strBuilder.ToString();
 
             Console.WriteLine(strWorld);
         }
